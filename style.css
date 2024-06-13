@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.cell {
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 400px;
+}
