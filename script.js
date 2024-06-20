@@ -1,9 +1,9 @@
 const grid = document.querySelector(".container");
 const gridSizeSlider = document.querySelector(".grid-size-slider");
 
-let gridSize = gridSizeSlider.value;
+let initialGridSize = gridSizeSlider.value;
 
-createGrid(gridSize);
+createGrid(initialGridSize);
 
 gridSizeSlider.addEventListener("input", updateGrid)
 
