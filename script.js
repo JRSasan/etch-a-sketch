@@ -27,6 +27,7 @@ function createGrid(gridSize) {
 function removeGrid() {
 
     grid.innerHTML = ""
+
 }
 
 function updateGrid(e) {
@@ -35,6 +36,14 @@ function updateGrid(e) {
     let updatedGridSize = e.target.value;
     createGrid(updatedGridSize);
 
+}
+
+function clearGrid() {
+
+    removeGrid();
+    let currentGridSize = gridSizeSlider.value
+    createGrid(currentGridSize);
+    
 }
 
 let mouseDown = false;
