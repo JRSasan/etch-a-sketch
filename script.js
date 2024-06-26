@@ -1,6 +1,7 @@
 const grid = document.querySelector(".container");
 const gridSizeSlider = document.querySelector(".grid-size-slider");
 const colorPicker = document.querySelector(".color-picker");
+const clearButton = document.querySelector(".clear-button");
 
 let currentGridSize = gridSizeSlider.value;
 let currentColor = colorPicker.value;
@@ -9,6 +10,7 @@ createGrid(currentGridSize);
 
 gridSizeSlider.addEventListener("input", updateGrid);
 colorPicker.addEventListener("input", updateColor);
+clearButton.addEventListener("click", clearGrid);
 
 function createGrid(gridSize) {
     
