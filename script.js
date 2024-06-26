@@ -1,11 +1,14 @@
 const grid = document.querySelector(".container");
 const gridSizeSlider = document.querySelector(".grid-size-slider");
+const colorPicker = document.querySelector(".color-picker");
 
-let initialGridSize = gridSizeSlider.value;
+let currentGridSize = gridSizeSlider.value;
+let currentColor = colorPicker.value;
 
-createGrid(initialGridSize);
+createGrid(currentGridSize);
 
-gridSizeSlider.addEventListener("input", updateGrid)
+gridSizeSlider.addEventListener("input", updateGrid);
+colorPicker.addEventListener("input", updateColor);
 
 function createGrid(gridSize) {
     
@@ -15,8 +18,8 @@ function createGrid(gridSize) {
             cell.classList.add("cell")
             cell.style.height = `${400/gridSize}px`;
             cell.style.width = `${400/gridSize}px`;
-            cell.addEventListener("mousedown", fillToBlack);
-            cell.addEventListener("mouseover", fillToBlack);
+            cell.addEventListener("mousedown", fillCell);
+            cell.addEventListener("mouseover", fillCell);
     
             grid.appendChild(cell);
         }
@@ -41,21 +44,27 @@ function updateGrid(e) {
 function clearGrid() {
 
     removeGrid();
-    let currentGridSize = gridSizeSlider.value
+    currentGridSize = gridSizeSlider.value;
     createGrid(currentGridSize);
     
+}
+
+function updateColor(e) {
+
+    currentColor = e.target.value;
+
 }
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
-function fillToBlack(e) {
+function fillCell(e) {
     if (e.type === "mouseover" && !mouseDown) {
         return
     }
 
     let currentCell = e.target;
 
-    currentCell.style.backgroundColor = "black";
+    currentCell.style.backgroundColor = currentColor;
 }
