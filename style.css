@@ -1,9 +1,21 @@
+@font-face {
+    font-family: "Hello";
+    src: url(asset/font/HelloEtchASketch.ttf);
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     text-align: center;
+    background-color: #D2001A;
+}
+
+header h1 {
+    font-family: "Hello";
+    color: #FFFAE7;
+    text-shadow: 3px 4px 5px #000;
 }
 
 main {
@@ -35,7 +47,6 @@ main {
 }
 
 .cell {
-    border: 1px solid black;
     user-select: none;
 }
 
@@ -44,6 +55,9 @@ main {
     flex-wrap: wrap;
     height: 400px;
     width: 400px;
+    background-color: #FFFAE7;
+    border-radius: 16px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
 
 

@@ -85,7 +85,7 @@ function fillCell(e) {
     if (currentMode === "color") {
         currentCell.style.backgroundColor = currentColor;
     } else if (currentMode === "eraser") {
-        currentCell.style.backgroundColor = "#FFFFFF";
+        currentCell.style.backgroundColor = "#FFFAE7";
     } else if (currentMode === "rainbow") {
         let randomR = Math.random() * 256;
         let randomG = Math.random() * 256;
