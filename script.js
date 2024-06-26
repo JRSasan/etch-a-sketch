@@ -4,6 +4,7 @@ const colorPicker = document.querySelector(".color-picker");
 const clearButton = document.querySelector(".clear-button");
 const colorModeButton = document.querySelector(".color-mode");
 const eraserModeButton = document.querySelector(".eraser-mode");
+const rainbowModeButton = document.querySelector(".rainbow-mode");
 
 let currentGridSize = gridSizeSlider.value;
 let currentColor = colorPicker.value;
@@ -16,6 +17,7 @@ colorPicker.addEventListener("input", updateColor);
 clearButton.addEventListener("click", clearGrid);
 colorModeButton.addEventListener("click", updateMode);
 eraserModeButton.addEventListener("click", updateMode);
+rainbowModeButton.addEventListener("click", updateMode);
 
 function createGrid(gridSize) {
     
@@ -84,5 +86,11 @@ function fillCell(e) {
         currentCell.style.backgroundColor = currentColor;
     } else if (currentMode === "eraser") {
         currentCell.style.backgroundColor = "#FFFFFF";
+    } else if (currentMode === "rainbow") {
+        let randomR = Math.random() * 256;
+        let randomG = Math.random() * 256;
+        let randomB = Math.random() * 256;
+
+        currentCell.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     }
 }
