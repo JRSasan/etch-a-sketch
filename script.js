@@ -25,8 +25,8 @@ function createGrid(gridSize) {
         for (let j = 0; j < gridSize; j++) {
             const cell = document.createElement("div");
             cell.classList.add("cell")
-            cell.style.height = `${400/gridSize}px`;
-            cell.style.width = `${400/gridSize}px`;
+            cell.style.height = `${500/gridSize}px`;
+            cell.style.width = `${500/gridSize}px`;
             cell.addEventListener("mousedown", fillCell);
             cell.addEventListener("mouseover", fillCell);
     
