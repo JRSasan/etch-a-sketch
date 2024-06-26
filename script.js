@@ -2,15 +2,20 @@ const grid = document.querySelector(".container");
 const gridSizeSlider = document.querySelector(".grid-size-slider");
 const colorPicker = document.querySelector(".color-picker");
 const clearButton = document.querySelector(".clear-button");
+const colorModeButton = document.querySelector(".color-mode");
+const eraserModeButton = document.querySelector(".eraser-mode");
 
 let currentGridSize = gridSizeSlider.value;
 let currentColor = colorPicker.value;
+let currentMode = "color";
 
 createGrid(currentGridSize);
 
 gridSizeSlider.addEventListener("input", updateGrid);
 colorPicker.addEventListener("input", updateColor);
 clearButton.addEventListener("click", clearGrid);
+colorModeButton.addEventListener("click", updateMode);
+eraserModeButton.addEventListener("click", updateMode);
 
 function createGrid(gridSize) {
     
@@ -57,6 +62,13 @@ function updateColor(e) {
 
 }
 
+function updateMode(e) {
+
+    let newMode = e.target.value;
+    currentMode = newMode;
+
+}
+
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
@@ -68,5 +80,9 @@ function fillCell(e) {
 
     let currentCell = e.target;
 
-    currentCell.style.backgroundColor = currentColor;
+    if (currentMode === "color") {
+        currentCell.style.backgroundColor = currentColor;
+    } else if (currentMode === "eraser") {
+        currentCell.style.backgroundColor = "#FFFFFF";
+    }
 }
