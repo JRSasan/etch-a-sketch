@@ -3,8 +3,12 @@
     src: url(asset/font/HelloEtchASketch.ttf);
 }
 
-* {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -31,6 +35,28 @@ main {
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+
+.color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+
+.color-picker::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
 }
 
 .grid-size-slider {
