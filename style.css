@@ -13,12 +13,11 @@
 
 body {
     text-align: center;
-    background-color: #D2001A;
 }
 
 header h1 {
     font-family: "Hello";
-    color: #FFFAE7;
+    color: #EFEFEF;
     text-shadow: 3px 4px 5px #000;
 }
 
@@ -59,6 +58,16 @@ main {
     padding: 0;
 }
 
+button {
+    padding: 5px 30px;
+    width: 100%;
+    font-family: "Hello";
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+
+}
+
 .grid-size-slider {
     -webkit-appearance: none;
     appearance: none;
@@ -82,7 +91,6 @@ main {
     flex-wrap: wrap;
     height: 500px;
     width: 500px;
-    background-color: #FFFAE7;
     border-radius: 16px;
     box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
 }
