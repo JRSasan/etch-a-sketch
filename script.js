@@ -5,6 +5,7 @@ const clearButton = document.querySelector(".clear-button");
 const colorModeButton = document.querySelector(".color-mode");
 const eraserModeButton = document.querySelector(".eraser-mode");
 const rainbowModeButton = document.querySelector(".rainbow-mode");
+const gridSizeDisplay = document.querySelector(".grid-size");
 
 let currentGridSize = gridSizeSlider.value;
 let currentColor = colorPicker.value;
@@ -31,6 +32,7 @@ function createGrid(gridSize) {
             cell.addEventListener("mouseover", fillCell);
     
             grid.appendChild(cell);
+            setGridSizeDisplay(gridSize);
         }
     }
 
@@ -47,6 +49,7 @@ function updateGrid(e) {
     removeGrid();
     let updatedGridSize = e.target.value;
     createGrid(updatedGridSize);
+    setGridSizeDisplay(updatedGridSize);
 
 }
 
@@ -69,6 +72,11 @@ function updateMode(e) {
     let newMode = e.target.value;
     currentMode = newMode;
 
+}
+
+function setGridSizeDisplay(gridSize) {
+
+    gridSizeDisplay.textContent = `${gridSize} X ${gridSize}`
 }
 
 let mouseDown = false;
