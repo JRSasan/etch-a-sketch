@@ -20,6 +20,7 @@ header {
 }
 
 header h1 {
+    font-size: 50px;
     font-family: "Hello";
     color: #EFEFEF;
     text-shadow: 3px 4px 5px #000;
@@ -117,6 +118,22 @@ button.active {
     height: 500px;
     width: 500px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-family: "Hello";
+    font-size: 25px;
+    color: black;
+}
+
+.fa-github {
+    font-size: 25px;
+    color: black;
+    padding-left: 3px;
 }
 
 
