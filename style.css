@@ -15,6 +15,10 @@ body {
     text-align: center;
 }
 
+header {
+    margin: 50px;
+}
+
 header h1 {
     font-family: "Hello";
     color: #EFEFEF;
