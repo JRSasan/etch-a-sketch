@@ -70,6 +70,7 @@ function updateColor(e) {
 function updateMode(e) {
 
     let newMode = e.target.value;
+    activateButton(newMode);
     currentMode = newMode;
 
 }
@@ -77,6 +78,25 @@ function updateMode(e) {
 function setGridSizeDisplay(gridSize) {
 
     gridSizeDisplay.textContent = `${gridSize} X ${gridSize}`
+}
+
+function activateButton(newMode) {
+    if (currentMode === "rainbow") {
+        rainbowModeButton.classList.remove("active");
+    } else if (currentMode === "color") {
+        colorModeButton.classList.remove("active");
+    } else if (currentMode === "eraser") {
+        eraserModeButton.classList.remove("active");
+    }
+
+    if (newMode === "rainbow") {
+        rainbowModeButton.classList.add("active");
+    } else if (newMode === "color") {
+        colorModeButton.classList.add("active");
+    } else if (newMode === "eraser") {
+        eraserModeButton.classList.add("active");
+    }
+
 }
 
 let mouseDown = false;
@@ -93,7 +113,7 @@ function fillCell(e) {
     if (currentMode === "color") {
         currentCell.style.backgroundColor = currentColor;
     } else if (currentMode === "eraser") {
-        currentCell.style.backgroundColor = "#FFFAE7";
+        currentCell.style.backgroundColor = "white";
     } else if (currentMode === "rainbow") {
         let randomR = Math.random() * 256;
         let randomG = Math.random() * 256;

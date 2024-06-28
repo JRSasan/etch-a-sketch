@@ -65,7 +65,12 @@ button {
     font-size: 15px;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
+}
 
+button.active {
+    background-color: black;
+    color: white;
 }
 
 .grid-size {
@@ -96,7 +101,6 @@ button {
     background-color: black;
     border-radius: 50%;
     margin-top: -6px;
-    margin-left: -1px;
 }
 
 .cell {
@@ -108,7 +112,7 @@ button {
     flex-wrap: wrap;
     height: 500px;
     width: 500px;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.9);
 }
 
 
